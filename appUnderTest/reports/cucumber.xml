@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="62.591232">
+<testcase classname="Complete Order of T-Shirt" name="Login to application and update the first name" time="25.839264">
+<system-out><![CDATA[Given User click on Sign in on index page...................................passed
+When Login to the application with valid credentials........................passed
+Then User should be logged in...............................................passed
+Given Navigate to Personal Information on My account page...................passed
+When Save the form after updating the first name............................passed
+Then Success message "Your personal information has been successfully updated." should be displayed.passed
+]]></system-out>
+</testcase>
+<testcase classname="Complete Order of T-Shirt" name="Buy a T-Shirt and validate on order history page" time="36.751968">
+<system-out><![CDATA[Given User click on Sign in on index page...................................passed
+When Login to the application with valid credentials........................passed
+Then User should be logged in...............................................passed
+Given User navigates to "T-Shirts" section..................................passed
+When User adds the first item into the cart.................................passed
+And User proceed to checkout on pop up......................................passed
+And User proceed to checkout on Summary page................................passed
+And User proceed to checkout on Address page................................passed
+And User proceed to checkout after agreeing the terms on Shipping page......passed
+And User notice the amount and select "bankwire"............................passed
+And User navigate back to orders after confirming the order on Payment page.passed
+Then Verify that Order is displayed in order history page...................passed
+]]></system-out>
+</testcase>
+</testsuite>

@@ -1,0 +1,324 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "Background: User is Logged In",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 14495694642,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User click on Sign in on index page",
+            "match": {
+              "location": "LoginStepDef.click_on_Sign_in_on_index_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2394455032,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Login to the application with valid credentials",
+            "match": {
+              "location": "LoginStepDef.loginWithValidCredentials()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 12164000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User should be logged in",
+            "match": {
+              "location": "LoginStepDef.user_should_be_logged_in()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 12,
+        "name": "Login to application and update the first name",
+        "description": "",
+        "id": "complete-order-of-t-shirt;login-to-application-and-update-the-first-name",
+        "after": [
+          {
+            "result": {
+              "duration": 5409183018,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.logout()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1640722262,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "Navigate to Personal Information on My account page",
+            "match": {
+              "location": "AccountStepDef.navigate_to_Personal_Information_on_My_account_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1854328397,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "Save the form after updating the first name",
+            "match": {
+              "location": "AccountStepDef.save_the_form_after_updating_the_first_name()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 32716277,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "Success message \"Your personal information has been successfully updated.\" should be displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Your personal information has been successfully updated.",
+                  "offset": 17
+                }
+              ],
+              "location": "AccountStepDef.success_message_should_be_displayed(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 11,
+            "name": "@smoke"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "Background: User is Logged In",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 6689749177,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User click on Sign in on index page",
+            "match": {
+              "location": "LoginStepDef.click_on_Sign_in_on_index_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3474636622,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Login to the application with valid credentials",
+            "match": {
+              "location": "LoginStepDef.loginWithValidCredentials()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 8599905,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User should be logged in",
+            "match": {
+              "location": "LoginStepDef.user_should_be_logged_in()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 18,
+        "name": "Buy a T-Shirt and validate on order history page",
+        "description": "",
+        "id": "complete-order-of-t-shirt;buy-a-t-shirt-and-validate-on-order-history-page",
+        "after": [
+          {
+            "result": {
+              "duration": 3723575358,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.logout()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5048133189,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User navigates to \"T-Shirts\" section",
+            "match": {
+              "arguments": [
+                {
+                  "val": "T-Shirts",
+                  "offset": 19
+                }
+              ],
+              "location": "AccountStepDef.user_navigates_to_section(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 174534790,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "User adds the first item into the cart",
+            "match": {
+              "location": "CategoryStepDef.user_adds_the_first_item_into_the_cart()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4573958505,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "User proceed to checkout on pop up",
+            "match": {
+              "location": "CategoryStepDef.user_proceed_to_checkout_on_pop_up()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1691822779,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "User proceed to checkout on Summary page",
+            "match": {
+              "location": "OrderStepDef.user_proceed_to_checkout_on_Summary_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1675501334,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "User proceed to checkout on Address page",
+            "match": {
+              "location": "OrderStepDef.user_proceed_to_checkout_on_Address_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2095581434,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User proceed to checkout after agreeing the terms on Shipping page",
+            "match": {
+              "location": "OrderStepDef.user_proceed_to_checkout_after_agreeing_the_terms_on_Shipping_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1292366638,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "User notice the amount and select \"bankwire\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "bankwire",
+                  "offset": 35
+                }
+              ],
+              "location": "OrderStepDef.user_notice_the_amount_as_and_select(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6231900490,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "User navigate back to orders after confirming the order on Payment page",
+            "match": {
+              "location": "OrderStepDef.user_navigate_back_to_orders_after_confirming_the_order_on_Payment_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 71607284,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "Verify that Order is displayed in order history page",
+            "match": {
+              "location": "OrderHistoryStepDef.verify_that_Order_is_displayed_in_order_history_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 17,
+            "name": "@smoke"
+          }
+        ]
+      }
+    ],
+    "name": "Complete Order of T-Shirt",
+    "description": "",
+    "id": "complete-order-of-t-shirt",
+    "keyword": "Feature",
+    "uri": "smokeFeature/Demo.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@Feature"
+      }
+    ]
+  }
+]
