@@ -1,0 +1,23 @@
+Problem: To construct the framework using cucumber, Maven and Webdriver
+Pre-requites: Automation practice site automationpractice.com with credentials someone@example.com/Password123
+
+Github Location: https://github.com/chandandeep/AutomationExercise
+Solution: 
+1.	I used Page factory so that initialization of the elements will not be bug task due to inbuilt Pagefactory.initelement method. 
+2.	Singelton class used for initialization of webdriver so that Single instance of object can be shared
+3.	Modular framework in which the core-framework is separated out from code belongs to Application Under Test(AUT) to make it reusable for any further project. Maven has been used to cater this requirement
+4.	All the framework related utilities to be added under core-framework which is independent of AUT framework
+5.	Created wrapper methods for actions to be performed on Buttons, fields which will give benefit of logging, inducing fluent wait and combining two actions in single method like clearing of fields before sending keys in field. These methods are used in Page classes to perform actions
+6.	Fluent wait has been used to make use of polling
+7.	Background used in Feature files so actual scenario is not taking pain of writing pre-requisite actions
+8.	Configuration.properties acts as a placeholder for generic variables that are used in framework.
+9.	User can over-ride the browser name while executing the framework via Maven command 
+10.	Extent reports are used which can give the detail insight of the results and will give us the graphical representation of the results in form of pie chart
+Improvements:
+Like any other framework this framework too has the scope of improvements. Most of these has been skipped due to time constraints
+1.	Sonarqube to validate the java coding standards
+2.	Applitools can be used for image based validation
+3.	Parallel/retry execution by using maven surefire plugin
+4.	Adding screenshot on failure
+5.	Adding Jira API/Test rail API
+ 
