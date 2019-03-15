@@ -13,14 +13,13 @@ public class Button extends ObjectControl {
         super(element);
     }
 
+    /**
+     * Wrapper method on Click
+     * @param element: Element passed by the page class methods
+     */
    public void click(WebElement element){
        CommonUtils.waitTillElementDisplayed(element);
        element.click();
    }
-
-   public String getText(WebElement element){
-       CommonUtils.waitTillElementDisplayed(element);
-       return element.getText();
-   }
-
+    
 }

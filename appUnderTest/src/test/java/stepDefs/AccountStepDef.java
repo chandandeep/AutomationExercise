@@ -39,10 +39,6 @@ public class AccountStepDef extends CommonStepDef {
 
     }
 
-    @When("^User navigates to \"([^\"]*)\" section$")
-    public void user_navigates_to_section(String category) {
-        accountPage.clickTabOnNavigation(category);
-    }
 
 
 }

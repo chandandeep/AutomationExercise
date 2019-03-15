@@ -22,6 +22,10 @@ public class OrderHistoryPage extends AbstractPage<OrderHistoryPage> {
         return "?controller=history";
     }
 
+    /**
+     * Method to validate the order history
+     * @return - Boolean value
+     */
     public boolean validateOrderHistory() {
         List<WebElement> rowsOfTable = getWebDriver().findElements(By.xpath("//*[@id='order-list']/tbody/tr"));
         boolean flag = false;

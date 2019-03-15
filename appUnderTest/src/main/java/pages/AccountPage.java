@@ -60,40 +60,67 @@ public class AccountPage extends AbstractPage<AccountPage> {
         return "?controller=my-account";
     }
 
-
+    /**
+     * Method to click on Personal information on Account page
+     */
     public void clickOnPersonalInformation() {
         Controllers.button.click(personalInformationTab);
 
     }
 
+    /**
+     * Method to get the navigation page
+     *
+     * @return - String value of navigation page
+     */
     public String getNavigationPage() {
         return navigationPage.getText();
     }
 
-
+    /**
+     * Method to enter first name in the form
+     *
+     * @return - Retur the string value entered in the form
+     */
     public String enterFirstName() {
         firstName = RandomStringUtils.random(6, true, false);
         Controllers.textField.sendKeys(firstNameField, firstName);
         return firstName;
     }
 
-
+    /**
+     * Method to enter the password fields in the form
+     */
     public void enterPasswordFields() {
         Controllers.textField.sendKeys(oldPasswordField, configFileReader.getValue("password"));
-        Controllers.textField.sendKeys(newPasswordField,configFileReader.getValue("password"));
-        Controllers.textField.sendKeys(confirmPasswordField,configFileReader.getValue("password"));
+        Controllers.textField.sendKeys(newPasswordField, configFileReader.getValue("password"));
+        Controllers.textField.sendKeys(confirmPasswordField, configFileReader.getValue("password"));
     }
 
+    /**
+     * Method to submit the information provided
+     */
     public void submitInformation() {
         Controllers.button.click(saveInformationButtton);
     }
 
+    /**
+     * Method to get the success message displayed after submitting the form
+     *
+     * @return - String value of the message displayed
+     */
     public String getSuccessMessage() {
         return successInfoSavedMessage.getText();
 
     }
 
-
+    /**
+     * Method to click on Navigation tab
+     *
+     * @param category - Category on which it needs to navigate
+     * @param <T>      - generic type, Run time decided about the navigation depending upon category
+     * @return return the pageon which it will navigate to
+     */
     public <T extends AbstractPage<T>> T clickTabOnNavigation(String category) {
 
         List<WebElement> webElementList = topNavigationBar.findElements(By.tagName("li"));

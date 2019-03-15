@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.NoSuchElementException;
 import java.util.Properties;
 
 /**
@@ -14,12 +15,15 @@ import java.util.Properties;
 public class ConfigFileReader {
 
     private Properties properties = new Properties();
-    public static final String configPath = "\\src\\main\\resources\\configuration.properties";
+    public static final String RESOURCES_PATH = System.getProperty("user.dir") + "\\src\\main\\resources";
 
+    /**
+     * Constructor to locate and load the property file
+     */
     public ConfigFileReader() {
         BufferedReader reader = null;
         try {
-            reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+configPath));
+            reader = new BufferedReader(new FileReader(RESOURCES_PATH + "\\configuration.properties"));
             properties = new Properties();
             try {
                 properties.load(reader);
@@ -27,7 +31,7 @@ public class ConfigFileReader {
                 e.printStackTrace();
             }
         } catch (FileNotFoundException e) {
-            throw new RuntimeException("Properties file not found at path : " + System.getProperty("user.dir")+configPath);
+            throw new RuntimeException("Properties file not found at path : " + RESOURCES_PATH + "\\configuration.properties");
         } finally {
             try {
                 if (reader != null) reader.close();
@@ -37,24 +41,48 @@ public class ConfigFileReader {
 
     }
 
-
-    public DriverType getBrowserName(){
-        String browser =  properties.getProperty("browser");
-        if(browser.equals("chrome")){
+    /**
+     * Method to get the browser name from property file
+     * @return the Driver type
+     */
+    public DriverType getBrowserName() {
+        String browser = properties.getProperty("browser");
+        if (browser.equals("chrome")) {
             return DriverType.CHROME;
-        }
-        else if(browser.equalsIgnoreCase("firefox")){
+        } else if (browser.equalsIgnoreCase("firefox")) {
             return DriverType.FIREFOX;
+        } else if (browser.equalsIgnoreCase("IE")) {
+            return DriverType.IE;
         }
-        return  null;
+        else {
+            return null;
+        }
     }
 
-    public String getAppurl(){
-        return  properties.getProperty("url");
+    /**
+     * Method to get the appurl from the property file
+     * @return: String type of url
+     */
+    public String getAppurl() {
+        return properties.getProperty("url");
 
     }
 
-    public String getValue(String property){
+    /**
+     * Generic method to get any value from property file
+     * @param property
+     * @return
+     */
+    public String getValue(String property) {
         return properties.getProperty(property);
+    }
+
+    /**
+     * Method to return the path of extent report
+     * @return: String value of path
+     */
+    public String getExtentReportConfigPath() {
+        return RESOURCES_PATH + "\\extent-report-config.xml";
+
     }
 }

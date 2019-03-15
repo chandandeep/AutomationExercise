@@ -36,22 +36,32 @@ public class LoginPage extends AbstractPage<LoginPage>
         return "/index.php";
     }
 
-
-    public LoginPage clickOnSignIn(){
+    /**
+     * Method to click on sign in button
+     */
+    public void clickOnSignIn(){
         Controllers.button.click(SignIn);
-        return this;
     }
 
-    public LoginPage enterEmail(){
+    /**
+     *Method to enter the mail in login page
+     */
+    public void enterEmail(){
         Controllers.textField.sendKeys(emailField, configFileReader.getValue("username"));
-        return this;
     }
 
-    public LoginPage enterPasssword() {
+    /**
+     * Method to enter the password in the Login page
+     */
+    public void enterPasssword() {
         Controllers.textField.sendKeys(passwordField, configFileReader.getValue("password"));
-        return this;
     }
 
+    /**
+     * Method to click on sign in page
+     * @param <T> - generic type to make sure that page on which user is navigating should be extending the Abstract page
+     * @return - The page on which the user is navigating
+     */
     public <T extends AbstractPage<T>> T clickSignInButton(){
         Controllers.button.click(signInButton);
         return (T) this;

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <!-- Theme of the report-->
+        <theme>dark</theme>
+        <!-- Encoding-->
+        <encoding>UTF-8</encoding>
+        <!-- Protocol followed-->   <!-- defaults to https -->
+        <protocol>https</protocol>
+        <!-- Title of Report-->
+        <documentTitle>Automation Exercise</documentTitle>
+        <!-- Name of the report -->
+        <reportName>Automation Exercise - Report</reportName>
+        <!-- Date format-->
+        <dateFormat>MM-dd-yyyy</dateFormat>
+        <!-- Format of time-->
+        <timeFormat>HH:mm:ss</timeFormat>
+        <!-- custom javascript -->
+        <scripts>
+            <![CDATA[
+        $(document).ready(function() {
+
+        });
+      ]]>
+        </scripts>
+        <!-- custom styles -->
+        <styles>
+            <![CDATA[
+      ]]>
+        </styles>
+    </configuration>
+</extentreports>

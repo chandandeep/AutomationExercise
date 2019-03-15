@@ -32,7 +32,9 @@ public class CategoryPage extends AbstractPage<CategoryPage> {
         return "?id_category=5&controller=category";
     }
 
-
+    /**
+     * Method to add the item to cart
+     */
     public void initialAddToCart() {
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("arguments[0].scrollIntoView();", productImage);
@@ -42,6 +44,9 @@ public class CategoryPage extends AbstractPage<CategoryPage> {
         Controllers.button.click(addtoCartInitial);
     }
 
+    /**
+     * Method to proceed from the pop up
+     */
     public void proceedOnPopUp() {
         Controllers.button.click(proceedToCheckOutPopUp);
     }

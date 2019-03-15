@@ -16,12 +16,7 @@ Background:
 
   @smoke
   Scenario: Buy a T-Shirt and validate on order history page
-    Given User navigates to "T-Shirts" section
-    When User adds the first item into the cart
-    And User proceed to checkout on pop up
-    And User proceed to checkout on Summary page
-    And User proceed to checkout on Address page
-    And User proceed to checkout after agreeing the terms on Shipping page
-    And User notice the amount and select "bankwire"
+    Given User navigates to "T-Shirts" section and start purchasing the first item
+    When User completes the purchase
     And User navigate back to orders after confirming the order on Payment page
     Then Verify that Order is displayed in order history page

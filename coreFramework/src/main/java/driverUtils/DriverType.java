@@ -6,5 +6,6 @@ package driverUtils;
 
 public enum DriverType {
     FIREFOX,
-    CHROME;
+    CHROME,
+    IE;
 }

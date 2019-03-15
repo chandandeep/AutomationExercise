@@ -19,17 +19,30 @@ public abstract class AbstractPage<T extends AbstractPage<T>> {
 
     public final WebDriver webDriver;
 
+    /**
+     * Constructor to initialize the elements of the base classes
+     * @param webDriver - Parameter of type Webdriver
+     */
     public AbstractPage(WebDriver webDriver){
         this.webDriver = webDriver;
         PageFactory.initElements(new AjaxElementLocatorFactory(webDriver, 100), this);
 
     }
+
+    /**
+     * Method to return the webdriver
+     * @return - Webdriver
+     */
     public WebDriver getWebDriver(){
 
         return webDriver;
     }
 
-
+    /**
+     * Method to navigate to the required url and delete the cookies of the browser
+     * @param baseUrl - base url defined in configurations
+     * @return - Type of the page extending Abstract page
+     */
     public T navigate(final String baseUrl){
         getWebDriver().manage().deleteAllCookies();
         getWebDriver().get(baseUrl + getUrl());

@@ -6,10 +6,10 @@ import cucumber.api.CucumberOptions;
  * Created by Chandandeep Singh on 13-03-2019.
  */
 
-@CucumberOptions(plugin = {
+@CucumberOptions(plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumberExtentReport/report.html",
         "json:reports/cucumber.json",
         "junit:reports/cucumber.xml"},
-        format = {"pretty", "html:target/cucumberReports"},
+        format = {"pretty", "html:target/cucumberHTMLReports"},
         monochrome = true,
         features = "src/test/resources",
         tags = {"@smoke"},

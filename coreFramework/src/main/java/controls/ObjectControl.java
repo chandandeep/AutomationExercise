@@ -10,19 +10,9 @@ public class ObjectControl {
 
     public WebElement element;
 
-
     public ObjectControl(WebElement element){
         this.element = element;
     }
 
 
-    public void click(WebElement element) {
-        try {
-            element.click();
-        }
-            catch (StaleElementReferenceException sere) {
-                // simply retry finding the element in the refreshed DOM
-                element.click();
-            }
-    }
 }

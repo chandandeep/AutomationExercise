@@ -1,6 +1,8 @@
 package stepDefs;
 
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
+import pages.AccountPage;
 import pages.CategoryPage;
 
 /**
@@ -9,19 +11,18 @@ import pages.CategoryPage;
 public class CategoryStepDef extends CommonStepDef {
 
     public CategoryPage categoryPage;
+    public AccountPage accountPage;
 
     public CategoryStepDef() {
         categoryPage = new CategoryPage(getWebDriver());
+        accountPage = new AccountPage(getWebDriver());
 
     }
 
-    @When("^User adds the first item into the cart$")
-    public void user_adds_the_first_item_into_the_cart() {
+    @Given("^User navigates to \"([^\"]*)\" section and start purchasing the first item$")
+    public void user_navigates_to_section_and_start_purchasing_the_first_item(String category){
+    accountPage.clickTabOnNavigation(category);
         categoryPage.initialAddToCart();
-    }
-
-    @When("^User proceed to checkout on pop up$")
-    public void user_proceed_to_checkout_on_pop_up() {
         categoryPage.proceedOnPopUp();
     }
 

@@ -15,6 +15,11 @@ public class TextField extends ObjectControl {
         super(element);
     }
 
+    /**
+     * Wrapper method to clear and then enter the values
+     * @param element
+     * @param charSequences
+     */
     public void sendKeys(WebElement element, CharSequence...charSequences ){
         CommonUtils.waitTillElementDisplayed(element);
         element.clear();
