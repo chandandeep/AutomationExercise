@@ -1,6 +1,5 @@
 package stepDefs;
 
-import com.cucumber.listener.Reporter;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pages.OrderHistoryPage;
