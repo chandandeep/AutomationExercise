@@ -11,6 +11,10 @@
     <artifactId>coreframework</artifactId>
     <packaging>jar</packaging>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <aspectj.version>1.8.10</aspectj.version>
+    </properties>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/junit/junit -->
@@ -18,7 +22,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
-            <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
@@ -27,24 +30,35 @@
             <version>3.14.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>1.2.5</version>
+            <version>2.4.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-core</artifactId>
+            <version>2.4.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>info.cukes</groupId>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm-deps -->
+        <!--<dependency>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-jvm-deps</artifactId>
-            <version>1.0.5</version>
+            <version>1.0.6</version>
             <scope>provided</scope>
         </dependency>
-
+-->
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>1.2.5</version>
+            <version>2.4.0</version>
+            <scope>test</scope>
         </dependency>
+
 
         <dependency>
             <groupId>org.hamcrest</groupId>
@@ -58,17 +72,11 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.4</version>
         </dependency>
-
         <dependency>
-            <groupId>com.vimalselvam</groupId>
-            <artifactId>cucumber-extentsreport</artifactId>
-            <version>3.0.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.aventstack</groupId>
-            <artifactId>extentreports</artifactId>
-            <version>3.1.2</version>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-java-commons</artifactId>
+            <version>2.12.0</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -83,6 +91,30 @@
     <build>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
+
+
+                <plugin>
+
+                    <groupId>org.apache.maven.plugins</groupId> <!-- New Added -->
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.20</version>
+                    <!-- New Added -->
+                    <configuration>
+                        <systemPropertyVariables>
+                            <allure.results.directory>target/allure-results</allure.results.directory>
+                        </systemPropertyVariables>
+                        <!-- New Added -->
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.aspectj</groupId>
+                            <artifactId>aspectjweaver</artifactId>
+                            <version>${aspectj.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+
                 <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>

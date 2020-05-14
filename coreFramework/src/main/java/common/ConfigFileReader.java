@@ -85,4 +85,9 @@ public class ConfigFileReader {
         return RESOURCES_PATH + "\\extent-report-config.xml";
 
     }
+
+    public String getSauceExecution() {
+        return properties.getProperty("sauce_execution");
+    }
+
 }

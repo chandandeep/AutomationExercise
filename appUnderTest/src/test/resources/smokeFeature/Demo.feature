@@ -14,7 +14,7 @@ Background:
     When Save the form after updating the first name
     Then Success message "Your personal information has been successfully updated." should be displayed
 
-  @smoke
+  @Test1
   Scenario: Buy a T-Shirt and validate on order history page
     Given User navigates to "T-Shirts" section and start purchasing the first item
     When User completes the purchase

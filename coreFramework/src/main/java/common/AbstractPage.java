@@ -25,7 +25,7 @@ public abstract class AbstractPage<T extends AbstractPage<T>> {
      */
     public AbstractPage(WebDriver webDriver){
         this.webDriver = webDriver;
-        PageFactory.initElements(new AjaxElementLocatorFactory(webDriver, 100), this);
+        PageFactory.initElements(new AjaxElementLocatorFactory(webDriver, 10), this);
 
     }
 
@@ -34,7 +34,6 @@ public abstract class AbstractPage<T extends AbstractPage<T>> {
      * @return - Webdriver
      */
     public WebDriver getWebDriver(){
-
         return webDriver;
     }
 
