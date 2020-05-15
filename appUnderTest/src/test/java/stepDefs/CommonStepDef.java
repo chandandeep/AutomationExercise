@@ -15,12 +15,13 @@ import static stepDefs.Hooks.scenario;
 public class CommonStepDef {
 
     ConfigFileReader configFileReader = new ConfigFileReader();
-
+      public static boolean isSauce ;
     protected WebDriver getWebDriver(){
         String browserName = System.getProperty("browser");
         if(browserName==null) {
+            isSauce = Boolean.parseBoolean(configFileReader.getSauceExecution());
             SingletonWebDriver.setBrowserName(configFileReader.getBrowserName().toString());
-            SingletonWebDriver.setRemote(Boolean.parseBoolean(configFileReader.getSauceExecution()));
+            SingletonWebDriver.setRemote(isSauce);
         }
         else {
             SingletonWebDriver.setBrowserName(browserName);
@@ -29,7 +30,9 @@ public class CommonStepDef {
     }
 
     public void navigateToUrl(){
-        ((JavascriptExecutor) getWebDriver()).executeScript("sauce:job-name=" + scenario);
+        if(isSauce) {
+            ((JavascriptExecutor) getWebDriver()).executeScript("sauce:job-name=" + scenario);
+        }
         new LoginPage(getWebDriver()).navigate(configFileReader.getAppurl());
     }
 

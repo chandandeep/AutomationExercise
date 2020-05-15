@@ -8,10 +8,10 @@ import org.junit.runner.RunWith;
  * Created by Chandandeep Singh on 13-03-2019.
  */
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"json:reports/cucumber.json",
+@CucumberOptions(plugin = {
         "junit:reports/cucumber.xml",
         "rerun:target/rerun.txt"},
-        format = {"pretty", "html:target/cucumberHTMLReports"},
+        format = {"pretty", "html:target/cucumberHTMLReports","json:target/allure-results/cucumber.json"},
         monochrome = true,
         features = "src/test/resources",
         tags = {"@smoke"},

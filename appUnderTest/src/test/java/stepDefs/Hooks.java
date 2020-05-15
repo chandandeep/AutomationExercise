@@ -11,6 +11,8 @@ import org.openqa.selenium.WebDriver;
 import java.io.File;
 import java.util.logging.Logger;
 
+import static stepDefs.CommonStepDef.isSauce;
+
 
 /**
  * Created by Chandandeep Singh on 13-03-2019.
@@ -34,12 +36,13 @@ public class Hooks {
 
     @After(order = 2)
     public static void tearDown(Scenario scenario) {
-        if(scenario.getStatus().toString() == "PASSED") {
-            ((JavascriptExecutor) SingletonWebDriver.getInstance()).executeScript("sauce:job-result=" + "passed");
-            System.out.println("Print Passed");
-        }
-        else{
-            ((JavascriptExecutor) SingletonWebDriver.getInstance()).executeScript("sauce:job-result=" + "failed");
+        if(isSauce) {
+            if (scenario.getStatus().toString() == "PASSED") {
+                ((JavascriptExecutor) SingletonWebDriver.getInstance()).executeScript("sauce:job-result=" + "passed");
+                System.out.println("Print Passed");
+            } else {
+                ((JavascriptExecutor) SingletonWebDriver.getInstance()).executeScript("sauce:job-result=" + "failed");
+            }
         }
         if (SingletonWebDriver.isInitialized()) {
             SingletonWebDriver.getInstance().quit();

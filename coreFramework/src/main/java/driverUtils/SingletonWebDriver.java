@@ -56,7 +56,7 @@ public  class SingletonWebDriver {
             capabilities.setCapability("platform", "Windows 10");
             capabilities.setCapability("version", "59.0");
             try {
-                WEB_DRIVER = new RemoteWebDriver(new URL("https://chan_asr:"+System.getProperty("SAUCE_ACCESS_KEY")+ "@ondemand.saucelabs.com:443/wd/hub"), capabilities);
+                WEB_DRIVER = new RemoteWebDriver(new URL("https://chan_asr:fe06e9fe-deb7-4f81-82b3-acc85f0c215a@ondemand.saucelabs.com:443/wd/hub"), capabilities);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
@@ -64,7 +64,7 @@ public  class SingletonWebDriver {
 
         if (WEB_DRIVER == null) {
             if (BROWSER_NAME.equalsIgnoreCase(CHROME)) {
-                WebDriverManager.chromedriver().version("2.40").setup();
+                WebDriverManager.chromedriver().setup();
                 WEB_DRIVER = new ChromeDriver();
             } else if (BROWSER_NAME.equalsIgnoreCase(FIREFOX)) {
                 WebDriverManager.firefoxdriver().setup();
