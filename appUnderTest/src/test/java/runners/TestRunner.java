@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         format = {"pretty", "html:target/cucumberHTMLReports","json:target/allure-results/cucumber.json"},
         monochrome = true,
         features = "src/test/resources",
-        tags = {"@smoke"},
+        tags = {"@API"},
         glue = {"stepDefs"}
 )
 

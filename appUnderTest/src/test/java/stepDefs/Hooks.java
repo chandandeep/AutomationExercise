@@ -28,11 +28,6 @@ public class Hooks {
     }
 
 
-    @After(order = 3)
-    public  void logout(){
-        SingletonWebDriver.getInstance().get("http://automationpractice.com/index.php?mylogout=");
-    }
-
 
     @After(order = 2)
     public static void tearDown(Scenario scenario) {
